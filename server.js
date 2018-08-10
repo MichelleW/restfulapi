@@ -143,17 +143,17 @@ app.get('/tasks',function(req,res){
   })
 })
 
-// app.get('/tasks/:id',function(req,res){
+app.get('/tasks/:id',function(req,res){
   
-//   Task.find({_id:req.params.id},function(err,data){
-//     if(err){
-//       console.log('err',err);
-//       res.json({message:false,error:err})
-//     }else{
-//       res.json({message:true,data:data})
-//     }
-//   })
-// })
+  Task.find({_id:req.params.id},function(err,data){
+    if(err){
+      console.log('err',err);
+      res.json({message:false,error:err})
+    }else{
+      res.json({message:true,data:data})
+    }
+  })
+})
 
 
 // tell the express app to listen on port 8000
